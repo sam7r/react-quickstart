@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { PropTypes, Children } from 'react';
 
-const propTypes = {};
+const propTypes = {
+  children: PropTypes.node
+};
 
+/**
+ * This is the root component
+ * @example
+ * <App />
+ */
 class App extends React.Component {
 
-  componentDidMount() {
-    console.log('component mounted');
-  }
-
+  /**
+   * render - lifecycle method rendering JSX to the DOM
+   * @return {ReactElement}
+   */
   render() {
-    return <div id="main-container">App Boom!</div>;
+    const children = Children.toArray(this.props.children);
+    return (
+      <div id="app-container">
+        { Children.map(children, child => child) }
+      </div>
+    );
   }
 }
 

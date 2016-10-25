@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "6"
 install:
-  - npm i -g gulp babel-cli yarn
+  - npm i -g gulp yarn
   - yarn
 script:
   - gulp test
