@@ -1,5 +1,0 @@
-{"name":"app.server","hostname":"DESKTOP-5SPB44M","pid":2840,"level":30,"env":"dev","msg":"express app started with node env dev","time":"2016-10-25T14:20:02.488Z","v":0}
-{"name":"app.server","hostname":"DESKTOP-5SPB44M","pid":2840,"level":30,"assets":"C:\\Users\\Samuel Roberton\\Code\\react-quickstart\\src\\server\\assets","msg":"static assets dir setup","time":"2016-10-25T14:20:02.490Z","v":0}
-{"name":"app.server","hostname":"DESKTOP-5SPB44M","pid":2840,"level":30,"msg":"livereload server watching for changes","time":"2016-10-25T14:20:02.495Z","v":0}
-{"name":"app.server","hostname":"DESKTOP-5SPB44M","pid":2840,"level":30,"port":8081,"msg":"HMR server started","time":"2016-10-25T14:20:02.496Z","v":0}
-{"name":"app.server","hostname":"DESKTOP-5SPB44M","pid":2840,"level":30,"msg":"App server running on port 3000","time":"2016-10-25T14:20:02.889Z","v":0}
