@@ -1,7 +1,9 @@
 language: node_js
 node_js:
   - "6"
+install:
+  - npm i -g gulp babel-cli yarn
+  - yarn
 script:
-  - npm test
-after_script:
-  - npm run eslint
+  - gulp test
+  - gulp eslint
