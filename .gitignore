@@ -1,7 +1,4 @@
 node_modules
-src/server/logs
 yarn-error.log
 npm-debug.log
-dist
-build
 docs
