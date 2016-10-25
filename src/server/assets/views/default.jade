@@ -1,0 +1,11 @@
+doctype
+html
+    head
+        title= title || 'App'
+        -each style in styles
+          link(rel='stylesheet', href= style)
+    body
+      #app
+
+    -each script in scripts
+      script(type='text/javascript', src= script)
