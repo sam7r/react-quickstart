@@ -3,9 +3,8 @@ import sourcemaps from 'gulp-sourcemaps';
 import sass from 'gulp-sass';
 import handleErrors from './util/handleErrors';
 import autoprefixer from 'gulp-autoprefixer';
-import constants from '../constants';
+import constants from 'root/constants';
 import path from 'path';
-import { argv } from 'yargs';
 
 gulp.task('styles', function() {
   const srcPath = path.join(constants.SRC_DIR, 'client', 'scss');
@@ -13,7 +12,7 @@ gulp.task('styles', function() {
 
   const config = {
     sourceComments: true,
-    outputStyle: argv.production ? 'compressed' : 'nested'
+    outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'nested'
   };
 
   return gulp.src(`${srcPath}/**/*.scss`)

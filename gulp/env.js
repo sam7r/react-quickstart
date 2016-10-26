@@ -1,7 +1,4 @@
 import gulp from 'gulp';
-import { argv } from 'yargs';
 
-gulp.task('env', () => {
-  return !argv.production ? process.env.NODE_ENV = 'dev'
-  : process.env.NODE_ENV = 'production';
-});
+gulp.task('set-env-dev', () => process.env.NODE_ENV = 'dev');
+gulp.task('set-env-prod', () => process.env.NODE_ENV = 'production');

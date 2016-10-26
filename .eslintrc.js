@@ -33,6 +33,11 @@ module.exports = {
     "no-empty-function": ["error", { "allow": ["arrowFunctions"] }],
     "quotes": ["error", "single"]
   },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  },
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "plugins": ["react"],
 }

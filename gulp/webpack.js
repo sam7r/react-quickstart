@@ -2,14 +2,15 @@ import gulp from 'gulp';
 import gutil from 'gulp-util';
 import webpack from 'webpack';
 import webpackDevServer from 'webpack-dev-server';
-import wpConfig from '../webpack.config.js';
-import { argv } from 'yargs';
-import constants from '../constants';
+import wpAppConfig from '../webpack.config';
+import wpNodeConfig from '../webpack.node.config';
+import constants from 'root/constants';
 
-gulp.task('webpack', (callback) => {
-  if(!argv.production) {
+gulp.task('webpack-app', (callback) => {
+
+  if(process.env.NODE_ENV !== 'production') {
     var bundleStart = null;
-    var compiler = webpack(wpConfig);
+    var compiler = webpack(wpAppConfig());
 
     compiler.plugin('compile', () => {
       console.log('Bundling...');
@@ -36,12 +37,21 @@ gulp.task('webpack', (callback) => {
     );
 
   } else {
+    webpack(Object.create(wpAppConfig()), (err, stats) => {
+      if(err) throw new gutil.PluginError('webpack:build', err);
+        gutil.log('[webpack]', stats.toString({ colors: true }));
+        callback();
+      });
+  }
 
-    webpack(Object.create(wpConfig), (err, stats) => {
+});
+
+gulp.task('webpack-node', (callback) => {
+  webpack(Object.create(wpNodeConfig()), (err, stats) => {
     if(err) throw new gutil.PluginError('webpack:build', err);
       gutil.log('[webpack]', stats.toString({ colors: true }));
       callback();
     });
-  }
 
 });
+

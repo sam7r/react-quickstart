@@ -1,6 +1,12 @@
 import bunyan from 'bunyan';
 import RotatingFileStream from 'bunyan-rotating-file-stream';
+import constants from 'root/constants';
 import path from 'path';
+
+const dir = (process.env.NODE_ENV === 'production' ?
+  constants.BUILD_DIR :
+  constants.SRC_DIR + '/server'
+);
 
 const loggerNames = ['app.server'];
 
@@ -59,7 +65,7 @@ const Logger = (() => {
               type: 'raw',
               level: 'trace',
               stream: new RotatingFileStream({
-                  path: path.resolve(__dirname, 'logs', `%Y-%m-%d_%H.%M.%S_${name}.log`),
+                  path: path.resolve(dir, 'logs', `%Y-%m-%d_%H.%M.%S_${name}.log`),
                   period: '1d',
                   startNewFile: true,
                   rotateExisting: true,

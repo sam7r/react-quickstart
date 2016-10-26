@@ -3,5 +3,13 @@
     "react",
     "es2015",
     "stage-0"
+  ],
+  "plugins": [
+    ["module-alias", [
+      { 
+        "src": "./constants.js",
+        "expose": "root/constants" 
+      }
+    ]]
   ]
 }
