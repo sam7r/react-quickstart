@@ -1,6 +1,7 @@
 # reactjs-quickstart
 [![Build Status](https://travis-ci.org/sam7r/reactjs-quickstart.svg)](https://travis-ci.org/sam7r/reactjs-quickstart)
 [![dependencies Status](https://david-dm.org/sam7r/reactjs-quickstart.svg)](https://david-dm.org/sam7r/reactjs-quickstart)
+[![devDependencies Status](https://david-dm.org/sam7r/reactjs-quickstart/dev-status.svg)](https://david-dm.org/sam7r/reactjs-quickstart?type=dev)
 
 - React
 - Redux
@@ -8,6 +9,7 @@
 - Express
 - Webpack (HMR)
 - Gulp
+
 
 ## Getting Started
 To get started first install some global dependencies with npm, then run **yarn**.
@@ -22,7 +24,18 @@ To get up and running after installation run gulp.
 $ gulp  
 ```
 Once this task has finished the app will be available at http://localhost:3000.  
-Any modification to directories or ports for development can been configured in **constants.js**.
+Any modification to directories or ports for development can been configured in **constants.js**.  
+
+## Build
+This task will first lint and unit test your code before bundling both the app and server code (with assets) into the *./build* folder.
+```
+$ gulp build
+```
+
+To carry out this task and run the express server immediately after (http://localhost:3000).
+```
+$ npm start
+```   
 
 ## Testing
 You can run your tests using either gulp or npm.  
@@ -44,7 +57,6 @@ You can generate a set of documents for the application by running the following
 ```
 gulp esdocs
 ```
-
 This will create a *docs* folder with the generated pages inside, to view open the *index.html* file in your browser.  
 For good auto doc generation please see the esdoc guide (https://esdoc.org/tutorial.html).
 
