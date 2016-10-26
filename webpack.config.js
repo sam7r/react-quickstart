@@ -36,7 +36,7 @@ const wpConfig = () => {
     new Webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },
       output: { comments: false },
-      sourceMap: false
+      sourceMap: !isProduction
     })
   ];
 
