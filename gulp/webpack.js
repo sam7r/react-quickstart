@@ -2,11 +2,11 @@ import gulp from 'gulp';
 import gutil from 'gulp-util';
 import webpack from 'webpack';
 import webpackDevServer from 'webpack-dev-server';
-import wpAppConfig from '../webpack.config';
-import wpNodeConfig from '../webpack.node.config';
+import wpAppConfig from '../webpack/webpack.app.config';
+import wpNodeConfig from '../webpack/webpack.server.config';
 import constants from 'root/constants';
 
-gulp.task('webpack-app', (callback) => {
+gulp.task('build-app', (callback) => {
 
   if(process.env.NODE_ENV !== 'production') {
     var bundleStart = null;
@@ -46,7 +46,7 @@ gulp.task('webpack-app', (callback) => {
 
 });
 
-gulp.task('webpack-node', (callback) => {
+gulp.task('build-server', (callback) => {
   webpack(Object.create(wpNodeConfig()), (err, stats) => {
     if(err) throw new gutil.PluginError('webpack:build', err);
       gutil.log('[webpack]', stats.toString({ colors: true }));

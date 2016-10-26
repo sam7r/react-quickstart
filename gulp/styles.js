@@ -11,7 +11,7 @@ gulp.task('styles', function() {
   const outPath = path.join(constants.SRC_DIR, 'server', 'assets', 'styles');
 
   const config = {
-    sourceComments: true,
+    sourceComments: process.env.NODE_ENV !== 'production',
     outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'nested'
   };
 
@@ -20,7 +20,6 @@ gulp.task('styles', function() {
     .pipe(sass(config))
     .on('error', handleErrors)
     .pipe(autoprefixer('last 2 versions', '> 1%'))
-    .pipe(sourcemaps.write(null))
     .pipe(gulp.dest(outPath));
 
 });
