@@ -1,4 +1,4 @@
-import constants from 'boilerplate/constants';
+import constants from 'internals/constants';
 import gulp from 'gulp';
 import path from 'path';
 import del from 'del';

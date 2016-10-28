@@ -1,7 +1,7 @@
 import test from 'blue-tape';
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import { componentSetup } from 'boilerplate/test-utils';
+import { componentSetup } from 'internals/test-utils';
 import App from 'containers/App';
 
 const props = {};

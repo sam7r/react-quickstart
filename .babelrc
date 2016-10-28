@@ -8,15 +8,11 @@
     ["module-alias", [
       { 
         "src": "./internals",
-        "expose": "boilerplate" 
+        "expose": "internals" 
       },
       { 
-        "src": "./internals/constants.js",
-        "expose": "boilerplate/constants" 
-      },
-      { 
-        "src": "./internals/testing/test-helper",
-        "expose": "boilerplate/test-utils"
+        "src": "./internals/testing/test-utils",
+        "expose": "internals/test-utils"
       },
       { 
         "src": "./app/containers",

@@ -1,5 +1,5 @@
 import express from 'express';
-import constants from 'boilerplate/constants';
+import constants from 'internals/constants';
 import middleware from './middlewares/frontendMiddleware';
 import path from 'path';
 import Logger from './logger';

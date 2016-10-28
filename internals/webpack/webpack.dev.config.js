@@ -1,5 +1,5 @@
 const Webpack = require('webpack');
-const constants = require('boilerplate/constants');
+const constants = require('internals/constants');
 
 const wpConfig = (options = {}) => {
 
