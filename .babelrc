@@ -20,11 +20,11 @@
       },
       { 
         "src": "./app/containers",
-        "expose": "app/containers" 
+        "expose": "containers" 
       },
       { 
         "src": "./app/components",
-        "expose": "app/components" 
+        "expose": "components" 
       }
     ]]
   ]
