@@ -20,11 +20,14 @@ export const prepareDOMEnv = (html = '<!doctype html><html><body></body></html>'
   };
 };
 
-export function componentSetup(component, ...args) {
+function combineProps(props) {
+  const combinedProps = {};
+  props.map((prop) => Object.assign(combinedProps, prop));
+  return combinedProps;
+}
+
+export function componentSetup(component, ...props) {
   prepareDOMEnv();
-  const props = {};
-  for (let i = 0; i < args.length; i++) {
-    Object.assign(props, args[i]);
-  }
-  return React.createElement(component, { ...props });
+  combineProps(props);
+  return React.createElement(component, combineProps(props));
 }

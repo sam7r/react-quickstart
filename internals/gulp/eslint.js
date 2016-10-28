@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 import eslint from 'gulp-eslint';
-import constants from 'root/constants';
+import constants from 'boilerplate/constants';
 
 gulp.task('eslint', () => {
   return gulp.src([`${constants.SRC_DIR}/**/*.js`,'!node_modules/**'])

@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 import tape from 'gulp-tape';
-import constants from '../constants';
+import constants from 'boilerplate/constants';
 import tapColorize from 'tap-colorize';
 
 gulp.task('test', function() {

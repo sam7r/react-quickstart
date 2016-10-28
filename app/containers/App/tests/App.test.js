@@ -1,6 +1,6 @@
 import test from 'blue-tape';
 import { mount } from 'enzyme';
-import { componentSetup } from '../../../common/test-helper.js';
+import { componentSetup } from 'boilerplate/test-utils';
 import App from '../App';
 
 const props = {};
