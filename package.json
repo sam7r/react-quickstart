@@ -6,7 +6,6 @@
   "author": "samuel.j.roberton",
   "license": "MIT",
   "scripts": {
-    "start": "gulp build && node ./build",
     "test": "babel-tape-runner -r babel-register ./src/**/*.test.js | tap-spec"
   },
   "dependencies": {
