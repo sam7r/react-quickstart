@@ -9,7 +9,9 @@
 - Express
 - Webpack (HMR)
 - Gulp
-
+- Tape
+- Enzyme 
+- Sinon 
 
 ## Getting Started
 To get started first install some global dependencies with npm, then run **yarn**.
@@ -34,12 +36,6 @@ $ gulp test
 
 $ npm test
 ```
-
-Libraries in use are:
-- blue-tape (https://ci.testling.com/guide/tape)
-- enzyme (http://airbnb.io/enzyme/docs/api/index.html)
-- sinon (http://sinonjs.org/docs/)
-- eslint (http://eslint.org/docs/rules/)
 
 ## Docs
 You can generate a set of documents for the application by running the following command.  
