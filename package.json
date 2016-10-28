@@ -6,7 +6,7 @@
   "author": "samuel.j.roberton",
   "license": "MIT",
   "scripts": {
-    "test": "babel-tape-runner -r babel-register ./src/**/*.test.js | tap-spec"
+    "test": "babel-tape-runner -r babel-register ./app/**/*.test.js | tap-spec"
   },
   "dependencies": {
     "babel-polyfill": "^6.16.0",
