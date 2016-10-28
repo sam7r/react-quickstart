@@ -24,18 +24,7 @@ To get up and running after installation run gulp.
 $ gulp  
 ```
 Once this task has finished the app will be available at http://localhost:3000.  
-Any modification to directories or ports for development can been configured in **constants.js**.  
-
-## Build
-This task will first lint and unit test your code before bundling both the app and server code (with assets) into the *./build* folder.
-```
-$ gulp build
-```
-
-To carry out this task and run the express server immediately after (http://localhost:3000).
-```
-$ npm start
-```   
+Any modification to directories or ports for development can been configured in **internals/constants.js**.  
 
 ## Testing
 You can run your tests using either gulp or npm.  
