@@ -1,20 +1,20 @@
 import bunyan from 'bunyan';
 import RotatingFileStream from 'bunyan-rotating-file-stream';
-import constants from 'root/constants';
 import path from 'path';
 
-const dir = (process.env.NODE_ENV === 'production' ?
-  constants.BUILD_DIR :
-  constants.SRC_DIR + '/server'
-);
-
+// set our logs folder directory
+const dir = path.resolve(__dirname, 'logs');
+// define our different logger names
 const loggerNames = ['app.server'];
 
 const Logger = (() => {
+  // single instance
   let instance;
 
   function init() {
+    // return our logger methods
     return {
+      // object for logger instances
       loggers: {},
 
       debug(name, responseData, msg) {
@@ -53,6 +53,7 @@ const Logger = (() => {
         }
       },
 
+      // create our logger instance with rotating file stream
       createLoggerInstance(name) {
         return bunyan.createLogger({
           name,
@@ -65,7 +66,7 @@ const Logger = (() => {
               type: 'raw',
               level: 'trace',
               stream: new RotatingFileStream({
-                  path: path.resolve(dir, 'logs', `%Y-%m-%d_%H.%M.%S_${name}.log`),
+                  path: path.resolve(dir, `%Y-%m-%d_%H.%M.%S_${name}.log`),
                   period: '1d',
                   startNewFile: true,
                   rotateExisting: true,
@@ -82,6 +83,7 @@ const Logger = (() => {
         });
       },
 
+      // return logger instance by name, if none is found one is created
       getLoggerInstance(name) {
         if (!this.loggers[name]) {
           this.loggers[name] = this.createLoggerInstance(name);
@@ -90,10 +92,12 @@ const Logger = (() => {
         return this.loggers[name];
       },
 
+      // returns all created loggers
       getAllLoggers() {
         return Object.values(this.loggers);
       },
 
+      // creates all logger instances defined in loggerNames
       setupLoggers(loggerNames) {
         loggerNames.forEach(name => {
           this.loggers[name] = this.createLoggerInstance(name);
@@ -103,7 +107,9 @@ const Logger = (() => {
   }
 
   return {
+    // return our single logger instance
     getInstance: () => {
+      // create new instance if none exists
       if (!instance) {
         instance = init();
         instance.setupLoggers(loggerNames);
