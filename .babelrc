@@ -7,8 +7,24 @@
   "plugins": [
     ["module-alias", [
       { 
-        "src": "./constants.js",
-        "expose": "root/constants" 
+        "src": "./internals",
+        "expose": "boilerplate" 
+      },
+      { 
+        "src": "./internals/constants.js",
+        "expose": "boilerplate/constants" 
+      },
+      { 
+        "src": "./internals/testing/test-helper",
+        "expose": "boilerplate/test-utils"
+      },
+      { 
+        "src": "./app/containers",
+        "expose": "app/containers" 
+      },
+      { 
+        "src": "./app/components",
+        "expose": "app/components" 
       }
     ]]
   ]
