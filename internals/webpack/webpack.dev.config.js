@@ -28,6 +28,12 @@ const wpConfig = (options = {}) => {
     net: 'empty'
   };
 
+  config.resolve = {
+    alias : {
+      'styled-components$': 'styled-components/lib/index.js',
+    }
+  };
+
   config.module = {
     loaders: [
       {
