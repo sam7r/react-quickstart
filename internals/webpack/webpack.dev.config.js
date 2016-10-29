@@ -46,6 +46,7 @@ const wpConfig = (options = {}) => {
 
   config.plugins = [
     new Webpack.HotModuleReplacementPlugin(),
+    new Webpack.NamedModulesPlugin(),
     new Webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify('dev') }
     }),
