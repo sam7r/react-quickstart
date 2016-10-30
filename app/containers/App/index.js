@@ -9,21 +9,17 @@ const propTypes = {
  * @example
  * <App />
  */
-class App extends React.Component {
-
+const App = ({ children }) => {
   /**
-   * render - lifecycle method rendering JSX to the DOM
+   * App as our app container renders all given children
    * @return {ReactElement}
    */
-  render() {
-    const children = Children.toArray(this.props.children);
     return (
       <div id="app-container">
-        { Children.map(children, child => child) }
+        { Children.map(Children.toArray(children), child => child) }
       </div>
     );
-  }
-}
+};
 
 App.propTypes = propTypes;
 export default App;

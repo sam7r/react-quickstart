@@ -1,15 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
+import Title from 'components/Title';
+import Wrapper from 'components/Wrapper';
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
-
+/**
+ * Home page container component,
+ * Used in our app as the IndexRoute
+ * @example
+ * <Home />
+ */
 const Home = () => {
   return (
-    <Title>Welcome to the home page!</Title>
+    <Wrapper>
+      <Title>Welcome to the home page!</Title>
+    </Wrapper>
   );
 };
 
