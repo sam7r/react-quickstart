@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import webpack from 'webpack';
-import config from '../webpack/webpack.dev.config';
+import config from 'internals/webpack/webpack.prod.config';
 
 gulp.task('webpack-app', (callback) => {
   webpack(Object.create(config()), (err, stats) => {
