@@ -1,11 +1,12 @@
-# reactjs-quickstart
-[![Build Status](https://travis-ci.org/sam7r/reactjs-quickstart.svg)](https://travis-ci.org/sam7r/reactjs-quickstart)
-[![dependencies Status](https://david-dm.org/sam7r/reactjs-quickstart.svg)](https://david-dm.org/sam7r/reactjs-quickstart)
-[![devDependencies Status](https://david-dm.org/sam7r/reactjs-quickstart/dev-status.svg)](https://david-dm.org/sam7r/reactjs-quickstart?type=dev)
+# react-quickstart
+[![Build Status](https://travis-ci.org/sam7r/react-quickstart.svg)](https://travis-ci.org/sam7r/react-quickstart)
+[![dependencies Status](https://david-dm.org/sam7r/react-quickstart.svg)](https://david-dm.org/sam7r/react-quickstart)
+[![devDependencies Status](https://david-dm.org/sam7r/react-quickstart/dev-status.svg)](https://david-dm.org/sam7r/react-quickstart?type=dev)
 
 - React
 - Redux
 - React Router
+- Styled Components
 - Express
 - Webpack (HMR)
 - Gulp
